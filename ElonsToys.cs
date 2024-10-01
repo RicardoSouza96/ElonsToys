@@ -1,13 +1,12 @@
 using System;
+using System.Reflection.Metadata.Ecma335;
 
 class RemoteControlCar
 {
+    private int meters = 0;
     public static RemoteControlCar Buy() => new RemoteControlCar();
 
-    public string DistanceDisplay()
-    {
-        throw new NotImplementedException("Please implement the RemoteControlCar.DistanceDisplay() method");
-    }
+    public string DistanceDisplay() => $"Driven {meters} meters";
 
     public string BatteryDisplay()
     {
