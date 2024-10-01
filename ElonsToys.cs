@@ -13,6 +13,7 @@ class RemoteControlCar
 
     public void Drive()
     {
-
+        meters += 20;
+        battery -= 1;
     }
 }
