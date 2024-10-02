@@ -9,11 +9,22 @@ class RemoteControlCar
 
     public string DistanceDisplay() => $"Driven {meters} meters";
 
-    public string BatteryDisplay() => $"Battery at {battery}%";
+    public string BatteryDisplay()
+    {
+        if (battery == 0)
+            return $"Battery empty";
+
+        return $"Battery at {battery}%";
+    }
 
     public void Drive()
     {
-        meters += 20;
-        battery -= 1;
+        if (battery == 0)
+            BatteryDisplay();
+        else
+        {
+            meters += 20;
+            battery -= 1;
+        }
     }
 }
